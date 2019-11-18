@@ -6,9 +6,22 @@ alias ls="ls -G"
 alias la="ls -laG"
 alias g="git"
 
-# path
+# OS related
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  export PATH="/usr/local/opt/gettext/bin:/usr/local/sbin:$PATH"
+  export BASH_SILENCE_DEPRECATION_WARNING=1
+fi
+
+# path
+if [ -d "/usr/local/opt/gettext/bin" ]; then
+  export PATH="/usr/local/opt/gettext/bin:$PATH"
+fi
+
+if [ -d "/usr/local/sbin" ]; then
+  export PATH="/usr/local/sbin:$PATH"
+fi
+
+if [ -d "usr/local/opt/openssl@1.1/bin" ]; then
+  export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 fi
 
 # history search
@@ -23,5 +36,7 @@ if [ -d "${HOME}/.asdf" ]; then
   source $HOME/.asdf/completions/asdf.bash
 fi
 
-# Pure theme bash
-source $HOME/.bash_theme
+# theme
+if [ -d "${HOME}/.bash_theme" ]; then
+  source $HOME/.bash_theme
+fi
