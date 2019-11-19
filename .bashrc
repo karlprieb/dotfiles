@@ -37,6 +37,6 @@ if [ -d "${HOME}/.asdf" ]; then
 fi
 
 # theme
-if [ -d "${HOME}/.bash_theme" ]; then
+if [ -f "${HOME}/.bash_theme" ]; then
   source $HOME/.bash_theme
 fi
