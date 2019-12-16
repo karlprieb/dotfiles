@@ -37,6 +37,11 @@ if [ -d "${HOME}/.asdf" ]; then
 fi
 
 # theme
-if [ -f "${HOME}/.bash_theme" ]; then
-  source $HOME/.bash_theme
+if [ -f "${HOME}/.bash/theme.sh" ]; then
+  source $HOME/.bash/theme.sh
+fi
+
+# git autocomplete
+if [ -f "${HOME}/.bash/git-completion.sh" ]; then
+  source $HOME/.bash/git-completion.sh
 fi
