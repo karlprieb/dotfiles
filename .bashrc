@@ -45,3 +45,6 @@ fi
 if [ -f "${HOME}/.bash/git-completion.sh" ]; then
   source $HOME/.bash/git-completion.sh
 fi
+
+# case insensitive autocomplete
+bind 'set completion-ignore-case on'
