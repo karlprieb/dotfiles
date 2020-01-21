@@ -19,13 +19,7 @@ set hidden
 
 " Colors
 syntax on
-colorscheme onehalflight
-set notermguicolors
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-set termguicolors
-endif
+colorscheme "Bluloco Light"
 
 " Spaces
 set tabstop=2
@@ -36,14 +30,12 @@ set expandtab
 set autoindent
 
 " UI
-set termguicolors          " Force GUI colors in terminals
 set cursorline             " Highlight the cursor line
 set nowrap                 " Disable line wrapping<Paste>
 set smartcase              " Case insensitive unless typing with caps
 set smarttab               " sw at the start of the line, sts everywhere else
 set listchars+=space:·
 set noshowmode
-"set laststatus=2
 set display=lastline
 set ttyfast
 set lazyredraw
@@ -67,7 +59,6 @@ set directory^=$HOME/.vim/tmp//
 map <c-e> :Lexplore<cr>
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
-
 
 " Airline
 let g:airline_theme='onehalflight'
