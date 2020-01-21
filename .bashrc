@@ -1,3 +1,4 @@
+shopt -s autocd
 # dotfiles
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
@@ -7,22 +8,14 @@ alias la="ls -laG"
 alias g="git"
 
 # OS related
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  export BASH_SILENCE_DEPRECATION_WARNING=1
-fi
+[[ "$OSTYPE" == "darwin"* ]] && export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # path
-if [ -d "/usr/local/opt/gettext/bin" ]; then
-  export PATH="/usr/local/opt/gettext/bin:$PATH"
-fi
+[ -d "/usr/local/opt/gettext/bin" ] && export PATH="/usr/local/opt/gettext/bin:$PATH"
 
-if [ -d "/usr/local/sbin" ]; then
-  export PATH="/usr/local/sbin:$PATH"
-fi
+[ -d "/usr/local/sbin" ] && export PATH="/usr/local/sbin:$PATH"
 
-if [ -d "usr/local/opt/openssl@1.1/bin" ]; then
-  export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-fi
+[ -d "usr/local/opt/openssl@1.1/bin" ] && export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 # history search
 if [[ $- == *i* ]]; then
@@ -37,14 +30,13 @@ if [ -d "${HOME}/.asdf" ]; then
 fi
 
 # theme
-if [ -f "${HOME}/.bash/theme.sh" ]; then
-  source $HOME/.bash/theme.sh
-fi
+[ -f "${HOME}/.bash/theme.sh" ] && source $HOME/.bash/theme.sh
 
 # git autocomplete
-if [ -f "${HOME}/.bash/git-completion.sh" ]; then
-  source $HOME/.bash/git-completion.sh
-fi
+[ -f "${HOME}/.bash/git-completion.sh" ] && source $HOME/.bash/git-completion.sh
 
 # case insensitive autocomplete
 bind 'set completion-ignore-case on'
+
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
