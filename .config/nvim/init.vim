@@ -19,7 +19,7 @@ set hidden
 
 " Colors
 syntax on
-colorscheme "Bluloco Light"
+colorscheme onehalflight
 
 " Spaces
 set tabstop=2
