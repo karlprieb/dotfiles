@@ -1,4 +1,3 @@
-shopt -s autocd
 # dotfiles
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
@@ -6,6 +5,7 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ls="ls -G"
 alias la="ls -laG"
 alias g="git"
+alias cat="bat"
 
 # OS related
 [[ "$OSTYPE" == "darwin"* ]] && export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -40,3 +40,6 @@ bind 'set completion-ignore-case on'
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# autocd
+shopt -s autocd
